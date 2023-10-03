@@ -89,6 +89,7 @@ function displayQ1(){
 }
 function displayQ2(){
     resetBorder();
+    document.getElementById("question").innerHTML = "What is your favorite hobby?";
     document.getElementById("opt1").src = "activity-images/cooking.jpg";
     document.getElementById("opt2").src = "activity-images/singing.jpg";
     document.getElementById("opt3").src = "activity-images/gardening.jpg";
@@ -106,9 +107,16 @@ function displayQ2(){
 document.getElementById("submitbutton").addEventListener('click', function() {
     fullAnswer += " " + submission;
     question++;
-    displayImage();
-    document.getElementById("answer").innerHTML = fullAnswer;
+    if (question > 2){
+        document.getElementById("wrap").style.display = "none";
+        document.getElementById("question").innerHTML = "Results: " + fullAnswer;
+        document.getElementById("submitbutton").style.display = "none";
+    }
+    else{
+        displayImage();
+    }
     submission = "";
+    
 });
 
 function resetBorder(){
