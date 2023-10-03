@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Draggable Image Slider | CodingNepal</title>
+    <title>Omnia Gallery</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="script.js" defer></script>
   </head>
   <body>
+    <h1 id = "answer"></h1>
     <div class="wrapper">
       <i id="left" class="fa-solid fa-angle-left"></i>
       <div class="carousel">
-        <img src="color-images/red.jpg" alt="img" draggable="false">
-        <img src="color-images/orange.jpg" alt="img" draggable="false">
-        <img src="color-images/yellow.jpg" alt="img" draggable="false">
-        <img src = "color-images/green.jpg" alt = "img" draggable="false">
-        <img src = "color-images/blue.jpg" alt = "img" draggable="false">
-        <img src = "color-images/purple.jpg" alt = "img" draggable="false">
+        <img class = "option" id = "opt1" src="color-images/red.jpg" alt="red" draggable="false">
+        <img class = "option" id = "opt2" src="color-images/orange.jpg" alt="orange" draggable="false">
+        <img class = "option" id = "opt3" src="color-images/yellow.jpg" alt="yellow" draggable="false">
+        <img class = "option" id = "opt4" src = "color-images/green.jpg" alt = "green" draggable="false">
+        <img class = "option" id = "opt5" src = "color-images/blue.jpg" alt = "blue" draggable="false">
+        <img class = "option" id = "opt6" src = "color-images/purple.jpg" alt = "purple" draggable="false">
       </div>
       <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
+    <div>
+      <button id="submitbutton" role="button">Submit</button>
+    </div>
+
     
   </body>
 </html>

@@ -1,3 +1,6 @@
+var question = 1;
+var submission = "";
+var fullAnswer = "";
 const carousel = document.querySelector(".carousel"),
 firstImg = carousel.querySelectorAll("img")[0],
 arrowIcons = document.querySelectorAll(".wrapper i");
@@ -71,3 +74,68 @@ carousel.addEventListener("touchmove", dragging);
 
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("touchend", dragStop);
+
+function displayImage(){
+    if (question == 1){
+        displayQ1();
+    }
+    if (question == 2){
+        displayQ2();
+    }
+}
+function displayQ1(){
+    document.getElementById("opt1").src = "color-images/red.jpg";
+    
+}
+function displayQ2(){
+    resetBorder();
+    document.getElementById("opt1").src = "activity-images/cooking.jpg";
+    document.getElementById("opt2").src = "activity-images/singing.jpg";
+    document.getElementById("opt3").src = "activity-images/gardening.jpg";
+    document.getElementById("opt4").src = "activity-images/painting.jpg";
+    document.getElementById("opt5").src = "activity-images/sports.jpg";
+    document.getElementById("opt6").src = "activity-images/dancing.jpg";
+    document.getElementById("opt1").alt = "cooking";
+    document.getElementById("opt2").alt = "singing";
+    document.getElementById("opt3").alt = "gardening";
+    document.getElementById("opt4").alt = "painting";
+    document.getElementById("opt5").alt = "sports";
+    document.getElementById("opt6").alt = "dancing";
+
+}
+document.getElementById("submitbutton").addEventListener('click', function() {
+    fullAnswer += " " + submission;
+    question++;
+    displayImage();
+    document.getElementById("answer").innerHTML = fullAnswer;
+    submission = "";
+});
+
+function resetBorder(){
+    document.getElementById("opt1").style.border = "";
+    document.getElementById("opt2").style.border = "";
+    document.getElementById("opt3").style.border = "";
+    document.getElementById("opt4").style.border = "";
+    document.getElementById("opt5").style.border = "";
+    document.getElementById("opt6").style.border = "";
+}
+
+//Image event listeners please fix this code
+// Select all elements with the "option" class
+var options = document.querySelectorAll(".option");
+
+// Define a function to reset the border for all options
+function resetBorder() {
+  options.forEach(function(option) {
+    option.style.border = "";
+  });
+}
+
+// Add click event listeners to each option
+options.forEach(function(option) {
+  option.addEventListener("click", function() {
+    resetBorder();
+    option.style.border = "5px solid green";
+    submission = option.getAttribute("alt");
+  });
+});
